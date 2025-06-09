@@ -1,0 +1,49 @@
+-- Загружаем библиотеку Rayfield
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+-- Создаём окно с Key System
+local Window = Rayfield:CreateWindow({
+    Name = "by ???",
+    LoadingTitle = "hi bro😎",
+    LoadingSubtitle = "by ???",
+    ConfigurationSaving = {
+        Enabled = false, -- Включаем сохранение конфигурации
+        FolderName = "ExampleHub", -- Папка для сохранения
+        FileName = "NotificationConfig" -- Имя файла конфигурации
+    },
+    KeySystem = true, -- Включаем Key System
+    KeySettings = {
+        Title = "Pls key",
+        Subtitle = "plss bro",
+        Note = "key: HHJJJAAQQQ1KARE_NT_L_OX", -- Инструкция для пользователя
+        FileName = "1", -- Уникальное имя файла для ключа
+        SaveKey = false, -- Сохранять ключ после успешного ввода
+        GrabKeyFromSite = false, -- Не использовать внешний сайт
+        Key = {"HHJJJAAQQQ1KARE_NT_L_OX"} -- Список допустимых ключей
+    }
+})
+
+-- Создаём вкладку
+local Tab = Window:CreateTab("egg", 4483362458) -- Название и иконка
+
+-- Создаём кнопку
+local Button = Tab:CreateButton({
+    Name = "show the inside of an egg",
+    Callback = function()
+        -- Вызываем уведомление при нажатии
+        Rayfield:Notify({
+            Title = "ебать ты олух",
+            Content = "соси член лол",
+            Duration = 3, -- Длительность в секундах
+            Image = "rewind", -- Иконка из Lucide Icons
+            Actions = { -- Опционально: действия
+                {
+                    Name = "ОК",
+                    Callback = function()
+                        print("Пользователь нажал ОК")
+                    end
+                }
+            }
+        })
+    end
+})
